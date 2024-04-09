@@ -22,8 +22,9 @@ while escolha > 4:
     escolha = int(input("Insira a opção:\n"))
 
 if escolha == 1:
-    n_bits = int(input("Insira o número de bits que deseja para criar a tabela: \n"))
-    tabela_gray.gerar_gray_(n_bits)
+    num_bits = int(input("Insira o número de bits que deseja para criar a tabela: \n"))
+    tabela_gray.gerar_e_imprimir_tabela_gray(num_bits)
+
     
 
 elif escolha == 2:
