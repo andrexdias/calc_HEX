@@ -6,10 +6,10 @@ Este trabalho está a ser desenvolvido no ambito da cadeira do Ecosistemas do 2�
 
 ## Elaborado por:
 
-- André Dias 
+- André Dias Nº.52864 
 - Guilherme Nunes 
-- Rodrigo Soares 
-- Guilherme Nunes
+- Rodrigo Soares Nº.51589
+- Tómas Silva Nº. 49494
 
 
 ## Instalação e inicialização
