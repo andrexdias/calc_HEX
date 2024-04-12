@@ -1,5 +1,5 @@
 import tabela_gray
-
+import conversor
 
 print("Seja bem vindo ao programa de calculos!\n")
 
@@ -25,10 +25,11 @@ if escolha == 1:
     num_bits = int(input("Insira o número de bits que deseja para criar a tabela: \n"))
     tabela_gray.gerar_e_imprimir_tabela_gray(num_bits)
 
-    
-
 elif escolha == 2:
     print("Vamos fazer a conversão!")
+    numero = int(input("Insira o número que deseja converter:"))
+    base_destino = int(input("Insira a base de destino:"))
+    conversor.converter_base(numero, base_destino)
     
 elif escolha == 3:
     print("Operações Aritmétricas!")
