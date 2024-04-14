@@ -1,24 +1,11 @@
-def converter_base(numero, base_destino):
-    """
-    Converte um número de uma base para outra e imprime o resultado.
-
-    Args:
-        numero (str): O número a ser convertido (como string).
-        base_destino (int): A base de destino (2 para binário, 10 para decimal, 16 para hexadecimal).
-    """
-    try:
-        # Converte o número para decimal
-        decimal = int(numero, base_destino)
-
-        # Converte o decimal para a base de destino
-        if base_destino == 2:
-            resultado = bin(decimal)[2:]  # Remove o prefixo "0b" do binário
-        elif base_destino == 16:
-            resultado = hex(decimal)[2:]  # Remove o prefixo "0x" do hexadecimal
-        else:
-            resultado = str(decimal)
-
-        print(f"Resultado na base {base_destino}: {resultado}")
-    except ValueError:
-        print("Erro: Número inválido ou base não suportada.")
-
+def converter_base(numero, base_origem, base_destino):
+    numero_decimal = int(numero, base_origem)
+    if base_destino == 10:
+        resultado = str(numero_decimal)
+    elif base_destino == 2:
+        resultado = bin(numero_decimal).replace("0b", "")
+    elif base_destino == 16:
+        resultado = hex(numero_decimal).replace("0x", "")
+    else:
+        resultado = "Base de destino não suportada."
+    print(f"O número {numero} na base {base_origem} é {resultado} na base {base_destino}.")

@@ -26,10 +26,24 @@ if escolha == 1:
     tabela_gray.gerar_e_imprimir_tabela_gray(num_bits)
 
 elif escolha == 2:
-    print("Vamos fazer a conversão!")
-    numero = int(input("Insira o número que deseja converter:"))
-    base_destino = int(input("Insira a base de destino:"))
-    conversor.converter_base(numero, base_destino)
+    print("Vamos fazer a conversão! \n")
+    numero = input("Por favor, insira o número que deseja converter: \n")
+    print("""Guia de Bases:
+Para usar a calculadora é preciso inserir as bases de origens e de destino. Essas bases são:
+          Base Binário: 2
+          Base Decimal: 10
+          Base Hexadecimal: 16""")
+    base_origem = int(input("Insira a base do número que deseja converter:"))
+    while base_origem != 2 and base_origem != 10 and base_origem != 16:
+        print("Por favor, insira 2, 10 ou 16.")
+        base_origem = int(input("Insira a base do número que deseja:"))
+    base_destino = int(input("Insira a base do resultado!"))
+    while base_destino != 2 and base_destino != 10 and base_destino != 16:
+        print("Por favor, insira 2, 10 ou 16. ")
+        base_destino = int(input("Insira a base do resultado do número que deseja:"))
+    conversor.converter_base(numero, base_origem, base_destino)
+        
+    
     
 elif escolha == 3:
     print("Operações Aritmétricas!")
