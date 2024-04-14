@@ -31,15 +31,15 @@ if escolha == 1: # Escolha da criação de tabela de Gray de N Bits
     
 
 elif escolha == 2:
-    import conversor2
+    import conversor
     print("Vamos fazer a conversão! \n")
-    numero = input("Por favor, insira o número que deseja converter: \n") # Número para conversão
-    print("""Guia de Bases:
-Para usar a calculadora é preciso inserir as bases de origens e de destino. Essas bases são:
-Base Binário: 2
-Base Decimal: 10
-Base Hexadecimal: 16""") # Guias das bases
-    base_origem = int(input("Insira a base do número que deseja converter:")) # Pedir a base de origiem
+    numero_e = input("Por favor, insira o número que deseja converter: \n") # Número para conversão
+    print("""   Guia de Bases:
+                Para usar a calculadora é preciso inserir as bases de origens e de destino. Essas bases são:
+                    Base Binário: 2
+                    Base Decimal: 10
+                    Base Hexadecimal: 16""") # Guias das bases
+    base_origem = int(input("Insira a base do número do número que escreveu:")) # Pedir a base de origiem
     while base_origem != 2 and base_origem != 10 and base_origem != 16: # Checker de base de origem e pedir base de origem se for errada se digitar errado
         print("Por favor, insira 2, 10 ou 16.")
         base_origem = int(input("Insira a base do número que deseja:")) #
@@ -47,7 +47,8 @@ Base Hexadecimal: 16""") # Guias das bases
     while base_destino != 2 and base_destino != 10 and base_destino != 16: # Checker de base de destino e pedir base de destino se estiver errada!
         print("Por favor, insira 2, 10 ou 16. ")
         base_destino = int(input("Insira a base do destino do número que deseja:")) 
-    conversor2.converter_base(numero, base_origem, base_destino) # Função para conversão!
+    resultado = conversor.converter_base(numero_e, base_origem, base_destino)
+    print(f"O número {numero_e} na base {base_origem} é {resultado} na base {base_destino}.")
     
 elif escolha == 3:
     print("Operações Aritmétricas!")
