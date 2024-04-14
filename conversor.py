@@ -1,12 +1,20 @@
-# O Python tem funções para conversão de bases como o decimal e hexadecimal (BIN E HEX)
-def converter_base(numero, base_origem, base_destino):
-    numero_decimal = int(numero, base_origem)
-    if base_destino == 10:
-        resultado = str(numero_decimal) 
-    elif base_destino == 2:
-        resultado = bin(numero_decimal).replace("0b", "")
-    elif base_destino == 16:
-        resultado = hex(numero_decimal).replace("0x", "")
-    else:
-        resultado = "Base de destino não suportada."
-    print(f"O número {numero} na base {base_origem} é {resultado} na base {base_destino}.")
+def converter_base(n, base_origem, base_destino):
+    # Dicionário para mapear dígitos hexadecimais
+    hex_map = {10: 'A', 11: 'B', 12: 'C', 13: 'D', 14: 'E', 15: 'F'}
+
+    # Converter o número para a base 10
+    num_dec = 0
+    for i, digito in enumerate(reversed(str(n))):
+        num_dec += int(digito) * (base_origem ** i)
+
+    # Converter o número da base 10 para a base de destino
+    num_base_destino = ''
+    while num_dec > 0:
+        digito = num_dec % base_destino
+        if 10 <= digito <= 15:
+            digito = hex_map[digito]
+        num_base_destino = str(digito) + num_base_destino
+        num_dec //= base_destino
+
+    return num_base_destino
+
