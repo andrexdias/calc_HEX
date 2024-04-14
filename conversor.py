@@ -1,7 +1,8 @@
+# O Python tem funções para conversão de bases como o decimal e hexadecimal (BIN E HEX)
 def converter_base(numero, base_origem, base_destino):
     numero_decimal = int(numero, base_origem)
     if base_destino == 10:
-        resultado = str(numero_decimal)
+        resultado = str(numero_decimal) 
     elif base_destino == 2:
         resultado = bin(numero_decimal).replace("0b", "")
     elif base_destino == 16:
