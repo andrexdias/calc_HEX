@@ -1,6 +1,7 @@
 import tabela_gray # Chamar arquivo Python para a tabela de gray
 import conversor # Chamar arquivo Conversor para conversão de bases
-
+import op_ar # Chamar arquivo op_ar para operações aritméticas em diferentes bases
+# Optei por chamar todos os arquivos individualmente para não extender nem poluir o código!
 
 
 print("Seja bem vindo ao programa de calculos!\n")  # Mensagem de Introdução

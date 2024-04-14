@@ -20,7 +20,7 @@ Este trabalho estÃ¡ a ser desenvolvido no ambito da cadeira do Ecosistemas do 2Â
   https://www.python.org/downloads/
 ```
     
-## Rodando localmente
+## Executar na sua propia maquina!
 
 Clone o projeto
 
