@@ -9,7 +9,7 @@ Este trabalho está a ser desenvolvido no ambito da cadeira do Ecosistemas do 2�
 - André Dias 
 - Guilherme Nunes 
 - Rodrigo Soares 
-- Guilherme Nunes
+- Tomas Silva
 
 
 ## Instalação e inicialização
