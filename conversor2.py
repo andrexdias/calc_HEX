@@ -1,4 +1,4 @@
-# O Python tem funções para conversão de bases como o decimal e hexadecimal (BIN E HEX)
+# O Python tem funções para conversão de bases como o decimal e hexadecimal
 def converter_base(numero, base_origem, base_destino):
     numero_decimal = int(numero, base_origem)
     if base_destino == 10:
