@@ -78,7 +78,7 @@ elif escolha == 3:
     while base_final != 2 and base_final != 10 and base_final != 16: #Checker de base final
         print("Por favor insira 2 para bases binárias, 10 para bases decimais e 16 para bases hexadecimais")
         base_final = str("Insira a base final:")
-    op_ar.operacao_aritmetica(num1, num2, base1, base2, operacao, base_final)
+    op_ar.converter_base1(num1, base1)
         
 elif escolha == 4: # Ajuda
     print(""" Olá, seja bem vindo!
