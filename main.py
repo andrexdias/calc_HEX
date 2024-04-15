@@ -5,7 +5,7 @@ print("[1] - Criação da Tabela de Grays de n Bits")
 print("[2] - Conversão entre Sistemas Numéricos")
 print("[3] - Operações aritméticas em diferentes bases")
 print("[4] - Ajudas \n")
-
+#teste
 escolha = int(input("Insira a sua opção:")) # Pedido de escolha ao utilizador 
 
 while escolha > 4: # Se caso o utilizador escolher uma opção errada ira encaminhar para escolher uma opção correta
