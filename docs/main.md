@@ -1,33 +1,36 @@
-print("Seja bem vindo ao programa de calculos!\n")  
+# Docs: main.md
+Arquivo principal do projeto e deve ser por este arquivo que deve ser executado
 
+## Menu
+
+Por aqui o utilizador por escolher qual utilidade do programa.
+
+```python
 print("Escolha a opção:") # menu
 print("[1] - Criação da Tabela de Grays de n Bits")
 print("[2] - Conversão entre Sistemas Numéricos")
 print("[3] - Operações aritméticas em diferentes bases")
 print("[4] - Ajudas \n")
+```
 
-escolha = int(input("Insira a sua opção:")) # Pedido de escolha ao utilizador 
+## Escolha de 01 (FM01) Criação das Tabelas de Gray de 𝑛 Bits
 
-while escolha > 4: # Se caso o utilizador escolher uma opção errada ira encaminhar para escolher uma opção correta
+Neste if é quando o utilizador seleciona a escolha 1 que é a criação de Tabela de Grays, chamando a função externa e executando.
 
-    print("Opção inválida!")
-    print("Por favor insira novamente!\n")
-    print("Escolha a opção:")
-    print("[1] - Criação da Tabela de Grays de n Bits")
-    print("[2] - Conversão entre Sistemas Numéricos")
-    print("[3] - Operações aritméticas em diferentes bases")
-    print("[4] - Ajudas \n")
-    escolha = int(input("Insira a opção:\n"))
-
+```python
 if escolha == 1:  # Escolha da criação de tabela de Gray de N Bits 
-    """Menu de escolha 01"""
     import tabela_gray as tabela_gray # Importar arquivo da função da tabela de gray 
     n = int(input("Insira o número de bits:")) # Introdução do número de bits
     gray = tabela_gray.gray_code(n) # Chamar a função
     for code in gray: # Chamar o codigo no gray para dar print
         print(code)
-    
+```
 
+## Escolha de 02 (FM02) Conversão entre Sistemas Numéricos 
+
+Neste if é a conversão, chamando a função para a conversão e pedindo ao utilizador os parametros
+
+```python
 elif escolha == 2:
     """Menu de escolha 02"""
     import conversor 
@@ -48,7 +51,12 @@ elif escolha == 2:
         base_destino = int(input("Insira a base do destino do número que deseja:")) 
     resultado = conversor.converter_base(numero_e, base_origem, base_destino)
     print(f"O número {numero_e} na base {base_origem} é {resultado} na base {base_destino}.")
-    
+```
+## Escolha de 03 (FA01) Operações aritméticas em diferentes bases
+
+Este é o if mais complicado do projeto pois pedimos 2 números ao utilizador, podendeo ser de bases diferentes, convertemos para números decimais, fazemos a soma e a subtração e por fim convertemos o resultado para a base que utilizador escolher:
+
+```python
 elif escolha == 3:
     """Menu de escolha 03"""
     print("Operações Aritmétricas!")
@@ -78,7 +86,13 @@ elif escolha == 3:
     subtracao = op_ar.sub(resultado1, resultado2)
     op_ar.soma_operacao_aritmetica(soma, base_final)
     op_ar.subn_operacao_aritmetica(subtracao, base_final)
-        
+```
+
+## Escolha 04 - Ajuda
+
+Aqui por fim fazemos umas linhas de texto para o utilizador se conseguir guiar por o programa se tiver alguma duvida!
+
+```python
 elif escolha == 4: # Ajuda
     """Menu de Ajuda 04"""
     print(""" Olá, seja bem vindo!
@@ -87,3 +101,21 @@ elif escolha == 4: # Ajuda
           Na opção 3 consegue calcular tanto hax, bin, dec, permitindo tendo bases diferentes para os calculos fazendo já a conversão!
           Este código foi elaborado por André Dias, Rodrigo Soares, Tómas Silva e Guilherme Nunes!
           """)
+```
+
+## Escolha errada - O que acontece? 
+
+Também pensamos nisso, o utilizador podera digitar uma escolha errada, portanto elaboramos por fim um codigo que caso o digitar errado voltar para o menu e so sai quando o utilizador digitar corretamente!
+
+```python
+while escolha > 4: # Se caso o utilizador escolher uma opção errada ira encaminhar para escolher uma opção correta
+
+    print("Opção inválida!")
+    print("Por favor insira novamente!\n")
+    print("Escolha a opção:")
+    print("[1] - Criação da Tabela de Grays de n Bits")
+    print("[2] - Conversão entre Sistemas Numéricos")
+    print("[3] - Operações aritméticas em diferentes bases")
+    print("[4] - Ajudas \n")
+    escolha = int(input("Insira a opção:\n"))
+```
