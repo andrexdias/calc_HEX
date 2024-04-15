@@ -35,29 +35,54 @@ def sub(resultado1, resultado2):
     resultado2 = int(resultado2)
     if resultado1 < resultado2:
         subtracao = resultado2 - resultado1
-    if resultado1 > resultado2:
+    if resultado1 >= resultado2:
         subtracao = resultado1 - resultado2
     return subtracao
 
+def soma_operacao_aritmetica(soma, base_final):
 
-def operacao_aritmetica(operacao, base_final):
-
-    if base_final == 2:  # binário
-        resultado_final = ''
-        while resultado1:
-            resultado_final = str(resultado1 % 2) + resultado_final
-            resultado1 //= 2
+    if base_final == 2:  # Binario
+        resultado_final_s = ''
+        while soma:
+            resultado_final_s = str(soma % 2) + resultado_final_s
+            soma //= 2
+    elif base_final == 10:  # decimal
+        resultado_final_s = soma
     elif base_final == 16:  # hexadecimal
         hex_map = {10: 'A', 11: 'B', 12: 'C', 13: 'D', 14: 'E', 15: 'F'}
         resultado_final = ''
-        while resultado1:
-            digito = resultado1 % 16
+        while soma:
+            digito = soma % 16
             if digito in hex_map:
-                resultado_final = hex_map[digito] + resultado_final
+                resultado_final_s = hex_map[digito] + resultado_final_s
             else:
-                resultado_final = str(digito) + resultado_final
+                resultado_final_s = str(digito) + resultado_final_s
             resultado1 //= 16
     else:
         return "Base final não suportada."
 
-    print(f"O resultado da {operacao} na base {base_final} é: {resultado_final}")
+    print(f"O resultado da soma na base {base_final} é: {resultado_final_s}")
+    
+def subn_operacao_aritmetica(subtracao, base_final):
+
+    if base_final == 2:  # Binario
+        resultado_final_sub = ''
+        while subtracao:
+            resultado_final_sub = str(subtracao % 2) + resultado_final_sub
+            subtracao //= 2
+    elif base_final == 10:  # decimal
+        resultado_final_sub = subtracao
+    elif base_final == 16:  # hexadecimal
+        hex_map = {10: 'A', 11: 'B', 12: 'C', 13: 'D', 14: 'E', 15: 'F'}
+        resultado_final_sub = ''
+        while subtracao:
+            digito = subtracao % 16
+            if digito in hex_map:
+                resultado_final_sub = hex_map[digito] + resultado_final_sub
+            else:
+                resultado_final_sub = str(digito) + resultado_final_sub
+            resultado_final_sub //= 16
+    else:
+        return "Base final não suportada."
+
+    print(f"O resultado da subtração na base {base_final} é: {resultado_final_sub}")

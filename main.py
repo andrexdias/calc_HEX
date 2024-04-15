@@ -63,22 +63,21 @@ elif escolha == 3:
     while base1 != 2 and base1 != 10 and base1 != 16: # Checker de base e pedir base do numero 1 se for errada
         print("Por favor, insira 2, 10 ou 16.")
         base1 = int(input("Insira a base que deseja para o número 1:"))
+    resultado1 = op_ar.converter_base1(num1, base1)
     num2 = int(input("Insira o segundo numero da conta:"))
-    base2 = int(input("Insira a base que estão os números que acabou de registrar:"))
+    base2 = int(input("Insira a base dos números que acabou de registrar:"))
     while base2 != 2 and base2 != 10 and base2 != 16: #Checker de base do numero 2
         print("Por favor, insira 2, 10 ou 16")
         base2 = int(int("Insira a base do 2º número:"))
-    operacao = input("Insira se é soma ou subtracao (Sem ~ ou ç)")
-    while operacao != "soma" and operacao != "subtracao":
-        print("Foi digitado errado!")
-        print("Digite subtracao, troque o ç por c e retire o ~, para subtrações")
-        print("Digite soma para somas")
-        operacao = input("Insira:")
+    resultado2 = op_ar.converter_base2(num2, base2)
     base_final = int(input("Insira a base que deseja no final:"))
     while base_final != 2 and base_final != 10 and base_final != 16: #Checker de base final
         print("Por favor insira 2 para bases binárias, 10 para bases decimais e 16 para bases hexadecimais")
         base_final = str("Insira a base final:")
-    op_ar.converter_base1(num1, base1)
+    soma = op_ar.som(resultado1, resultado2)
+    subtracao = op_ar.sub(resultado1, resultado2)
+    op_ar.soma_operacao_aritmetica(soma, base_final)
+    op_ar.subn_operacao_aritmetica(subtracao, base_final)
         
 elif escolha == 4: # Ajuda
     print(""" Olá, seja bem vindo!
