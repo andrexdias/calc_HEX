@@ -1,7 +1,3 @@
-"""@package docstring
-Página principal do Projeto!
-Este projeto foi desenvolvido no ambito da Cadeira de Ecosistemas do 1ºAno, 2ºSemestre.
-"""
 print("Seja bem vindo ao programa de calculos!\n")  
 
 print("Escolha a opção:") # menu
@@ -13,6 +9,9 @@ print("[4] - Ajudas \n")
 escolha = int(input("Insira a sua opção:")) # Pedido de escolha ao utilizador 
 
 while escolha > 4: # Se caso o utilizador escolher uma opção errada ira encaminhar para escolher uma opção correta
+    """
+    Menu de escolha
+    """
     print("Opção inválida!")
     print("Por favor insira novamente!\n")
     print("Escolha a opção:")
@@ -22,7 +21,8 @@ while escolha > 4: # Se caso o utilizador escolher uma opção errada ira encami
     print("[4] - Ajudas \n")
     escolha = int(input("Insira a opção:\n"))
 
-if escolha == 1: # Escolha da criação de tabela de Gray de N Bits 
+if escolha == 1:  # Escolha da criação de tabela de Gray de N Bits 
+    """Menu de escolha 01"""
     import tabela_gray # Importar arquivo da função da tabela de gray 
     n = int(input("Insira o número de bits:")) # Introdução do número de bits
     gray = tabela_gray.gray_code(n) # Chamar a função
@@ -31,6 +31,7 @@ if escolha == 1: # Escolha da criação de tabela de Gray de N Bits
     
 
 elif escolha == 2:
+    """Menu de escolha 02"""
     import conversor
     print("Vamos fazer a conversão! \n")
     numero_e = input("Por favor, insira o número que deseja converter: \n") # Número para conversão
@@ -51,6 +52,7 @@ elif escolha == 2:
     print(f"O número {numero_e} na base {base_origem} é {resultado} na base {base_destino}.")
     
 elif escolha == 3:
+    """Menu de escolha 03"""
     print("Operações Aritmétricas!")
     print("""   Guia de Bases:
                 Para usar a calculadora é preciso inserir as bases de origens e de destino. Essas bases são:
@@ -80,6 +82,10 @@ elif escolha == 3:
     op_ar.subn_operacao_aritmetica(subtracao, base_final)
         
 elif escolha == 4: # Ajuda
+    """Menu de Ajuda 04"""
     print(""" Olá, seja bem vindo!
+          Na opção 1 consegue criar uma tabela de Gray com n bits personalizado!
+          Na opção 2 consegue converter qualquer número para bin, hex, dec.
+          Na opção 3 consegue calcular tanto hax, bin, dec, permitindo tendo bases diferentes para os calculos fazendo já a conversão!
           Este código foi elaborado por André Dias, Rodrigo Soares, Tómas Silva e Guilherme Nunes!
           """)

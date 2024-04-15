@@ -1,4 +1,11 @@
+
 def gray_code(n):
+    
+    """Criador da tabela de N Gray
+
+    Returns:
+        gray: Ira mandar print com a tabela
+    """
 
     gray = ['0', '1']
 
