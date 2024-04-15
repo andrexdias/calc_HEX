@@ -1,28 +1,32 @@
-def soma_subtracao_base_n(base, num1, num2):
+def operacao_aritmetica(num1, num2, base1, base2, operacao, base_final):
+    def converter_base(numero, base):
+        return int(numero, base)
 
-    if base == 'bin':
-        num1_dec = int(num1, 2)
-        num2_dec = int(num2, 2)
-    elif base == 'dec':
-        num1_dec = int(num1)
-        num2_dec = int(num2)
-    else: 
-        num1_dec = int(num1, 16)
-        num2_dec = int(num2, 16)
-
-    soma = num1_dec + num2_dec
-    subtracao = num1_dec - num2_dec
-    
-    if base == 'bin':
-        soma_base_n = bin(soma)[2:]
-        subtracao_base_n = bin(subtracao)[2:]
-    elif base == 'dec':
-        soma_base_n = str(soma)
-        subtracao_base_n = str(subtracao)
+    if operacao == 'soma':
+        resultado1 = converter_base(num1, base1) + converter_base(num2, base2)
+    elif operacao == 'subtracao':
+        resultado1 = converter_base(num1, base1) - converter_base(num2, base2)
     else:
-        soma_base_n = hex(soma)[2:]
-        subtracao_base_n = hex(subtracao)[2:]
+        return "Operação não suportada."
 
-    print(f"A soma de {num1} e {num2} na base {base} é: {soma_base_n}")
-    print(f"A subtração de {num1} e {num2} na base {base} é: {subtracao_base_n}")
+    if base_final == 2:  # binário
+        resultado_final = ''
+        while resultado1:
+            resultado_final = str(resultado1 % 2) + resultado_final
+            resultado1 //= 2
+    elif base_final == 10:  # decimal  
+        resultado_final = resultado1
+    elif base_final == 16:  # hexadecimal
+        hex_map = {10: 'A', 11: 'B', 12: 'C', 13: 'D', 14: 'E', 15: 'F'}
+        resultado_final = ''
+        while resultado1:
+            digito = resultado1 % 16
+            if digito in hex_map:
+                resultado_final = hex_map[digito] + resultado_final
+            else:
+                resultado_final = str(digito) + resultado_final
+            resultado1 //= 16
+    else:
+        return "Base final não suportada."
 
+    print(f"O resultado da {operacao} na base {base_final} é: {resultado_final}")

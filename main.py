@@ -40,7 +40,7 @@ elif escolha == 2:
                     Base Decimal: 10
                     Base Hexadecimal: 16""") # Guias das bases
     base_origem = int(input("Insira a base do número do número que escreveu:")) # Pedir a base de origiem
-    while base_origem != 2 and base_origem != 10 and base_origem != 16: # Checker de base de origem e pedir base de origem se for errada se digitar errado
+    while base_origem != 2 and base_origem != 10 and base_origem != 16: # Checker de base de origem e pedir base de origem se for errada
         print("Por favor, insira 2, 10 ou 16.")
         base_origem = int(input("Insira a base do número que deseja:")) #
     base_destino = int(input("Insira a base do destino:")) # Pedir base de destino
@@ -52,15 +52,34 @@ elif escolha == 2:
     
 elif escolha == 3:
     print("Operações Aritmétricas!")
+    print("""   Guia de Bases:
+                Para usar a calculadora é preciso inserir as bases de origens e de destino. Essas bases são:
+                    Base Binário: 2
+                    Base Decimal: 10
+                    Base Hexadecimal: 16""") # Guias das bases
     import op_ar # Importar o arquivo
-    base = input("Insira a base numérica (bin, dec, hex): ") # Perguntar a base
-    if base not in ['bin', 'dec', 'hex']: # Checkar se introduziu a base bem
-        print("Base inválida. Deve ser 'bin', 'dec' ou 'hex'.")
-        base = input("Insira a base numérica (bin, dec, hex): ")
-    num1 = input(f"Insira o primeiro número na base {base}: ") # Inserir o primeiro numero
-    num2 = input(f"Insira o segundo número na base {base}: ") # Inserir o segundo numero
-    op_ar.soma_subtracao_base_n(base, num1, num2) #Chamar a função
-
+    num1 = int(input("Insira o primeiro numero da conta:"))
+    base1 = int(input("Insira a base que estão os números que acabou de registrar:"))
+    while base1 != 2 and base1 != 10 and base1 != 16: # Checker de base e pedir base do numero 1 se for errada
+        print("Por favor, insira 2, 10 ou 16.")
+        base1 = int(input("Insira a base que deseja para o número 1:"))
+    num2 = int(input("Insira o segundo numero da conta:"))
+    base2 = int(input("Insira a base que estão os números que acabou de registrar:"))
+    while base2 != 2 and base2 != 10 and base2 != 16: #Checker de base do numero 2
+        print("Por favor, insira 2, 10 ou 16")
+        base2 = int(int("Insira a base do 2º número:"))
+    operacao = input("Insira se é soma ou subtracao (Sem ~ ou ç)")
+    while operacao != "soma" and operacao != "subtracao":
+        print("Foi digitado errado!")
+        print("Digite subtracao, troque o ç por c e retire o ~, para subtrações")
+        print("Digite soma para somas")
+        operacao = input("Insira:")
+    base_final = int(input("Insira a base que deseja no final:"))
+    while base_final != 2 and base_final != 10 and base_final != 16: #Checker de base final
+        print("Por favor insira 2 para bases binárias, 10 para bases decimais e 16 para bases hexadecimais")
+        base_final = str("Insira a base final:")
+    op_ar.operacao_aritmetica(num1, num2, base1, base2, operacao, base_final)
+        
 elif escolha == 4: # Ajuda
     print(""" Olá, seja bem vindo!
           Este código foi elaborado por André Dias, Rodrigo Soares, Tómas Silva e Guilherme Nunes!
