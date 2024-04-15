@@ -12,4 +12,3 @@ def gray_code(n):
             gray[j] = '1' + gray[j]
 
     return gray
-
