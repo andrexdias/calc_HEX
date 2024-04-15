@@ -9,9 +9,7 @@ print("[4] - Ajudas \n")
 escolha = int(input("Insira a sua opção:")) # Pedido de escolha ao utilizador 
 
 while escolha > 4: # Se caso o utilizador escolher uma opção errada ira encaminhar para escolher uma opção correta
-    """
-    Menu de escolha
-    """
+
     print("Opção inválida!")
     print("Por favor insira novamente!\n")
     print("Escolha a opção:")
@@ -23,7 +21,7 @@ while escolha > 4: # Se caso o utilizador escolher uma opção errada ira encami
 
 if escolha == 1:  # Escolha da criação de tabela de Gray de N Bits 
     """Menu de escolha 01"""
-    import tabela_gray # Importar arquivo da função da tabela de gray 
+    import tabela_gray as tabela_gray # Importar arquivo da função da tabela de gray 
     n = int(input("Insira o número de bits:")) # Introdução do número de bits
     gray = tabela_gray.gray_code(n) # Chamar a função
     for code in gray: # Chamar o codigo no gray para dar print
@@ -32,7 +30,7 @@ if escolha == 1:  # Escolha da criação de tabela de Gray de N Bits
 
 elif escolha == 2:
     """Menu de escolha 02"""
-    import conversor
+    import conversor as conversor
     print("Vamos fazer a conversão! \n")
     numero_e = input("Por favor, insira o número que deseja converter: \n") # Número para conversão
     print("""   Guia de Bases:
@@ -59,7 +57,7 @@ elif escolha == 3:
                     Base Binário: 2
                     Base Decimal: 10
                     Base Hexadecimal: 16""") # Guias das bases
-    import op_ar # Importar o arquivo
+    import op_ar as op_ar # Importar o arquivo
     num1 = int(input("Insira o primeiro numero da conta:"))
     base1 = int(input("Insira a base que estão os números que acabou de registrar:"))
     while base1 != 2 and base1 != 10 and base1 != 16: # Checker de base e pedir base do numero 1 se for errada

@@ -1,6 +1,4 @@
-"""@package docstring
-Recursos utilizados para criar a conversão!
-"""
+
 
 def converter_base(numero_e, base_origem, base_destino):
     """Conversor

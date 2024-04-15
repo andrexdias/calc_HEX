@@ -1,0 +1,13 @@
+site_name: Calc_HEX # Pode ser usado o nome da sua aplicação
+theme:
+  name: material # Adiciona o tema bonitinho
+plugins:
+- search # Plugin que possibilita buscas pela documentação
+- mkdocstrings: # Esse que faz a mágica, mais informações abaixo
+    handlers:
+      python:
+        setup_commands:
+          - import sys
+          - sys.path.append("src")
+    watch: # Live-reload para os mais íntimos - mais informações abaixo também
+      - src
