@@ -1,5 +1,3 @@
-
-
 def converter_base(numero_e, base_origem, base_destino):
     """Conversor
 

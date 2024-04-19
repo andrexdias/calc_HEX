@@ -1,4 +1,3 @@
-
 def converter_base1(num1, base1):
     """Conversor do Numero 1
 
@@ -88,7 +87,7 @@ def soma_operacao_aritmetica(soma, base_final):
     """
 
     if base_final == 2:  # Binario
-        resultado_final_s = ''
+        resultado_final_s = ""
         while soma:
             resultado_final_s = str(soma % 2) + resultado_final_s
             soma //= 2
